@@ -68,6 +68,12 @@ void ACryptRaiderCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInp
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Started, this, &ACharacter::Jump);
 		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Completed, this, &ACharacter::StopJumping);
 
+		// Grabing ( Handled in Blueprint)
+		// EnhancedInputComponent->BindAction(GrabAction, ETriggerEvent::Triggered, this, &ACryptRaiderCharacter::Grab);
+
+		// Release ( Handled in Blueprint)
+		// EnhancedInputComponent->BindAction(ReleaseAction, ETriggerEvent::Triggered, this, &ACryptRaiderCharacter::Release);
+
 		// Moving
 		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ACryptRaiderCharacter::Move);
 
