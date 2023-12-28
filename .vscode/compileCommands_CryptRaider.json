@@ -150,5 +150,21 @@
 			"@C:\\Users\\shaya\\OneDrive\\Desktop\\UnrealProjects\\CryptRaider\\CryptRaider\\.vscode\\compileCommands_CryptRaider\\CryptRaider.1.rsp"
 		],
 		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\shaya\\OneDrive\\Desktop\\UnrealProjects\\CryptRaider\\CryptRaider\\Source\\CryptRaider\\TriggerComponent.cpp",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\shaya\\OneDrive\\Desktop\\UnrealProjects\\CryptRaider\\CryptRaider\\.vscode\\compileCommands_CryptRaider\\CryptRaider.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "C:\\Users\\shaya\\OneDrive\\Desktop\\UnrealProjects\\CryptRaider\\CryptRaider\\Source\\CryptRaider\\TriggerComponent.h",
+		"arguments": [
+			"C:\\Program Files (x86)\\Microsoft Visual Studio\\2022\\BuildTools\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe",
+			"@C:\\Users\\shaya\\OneDrive\\Desktop\\UnrealProjects\\CryptRaider\\CryptRaider\\.vscode\\compileCommands_CryptRaider\\CryptRaider.1.rsp"
+		],
+		"directory": "C:\\Program Files\\Epic Games\\UE_5.3\\Engine\\Source"
 	}
 ]

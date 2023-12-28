@@ -34,10 +34,12 @@ void UGrabber::TickComponent(float DeltaTime, ELevelTick TickType, FActorCompone
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 	UPhysicsHandleComponent* handler = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
 	if(handler != nullptr){
-		handler->SetTargetLocationAndRotation(
-			GetComponentLocation() + GetForwardVector() * HoldDistance,
-			GetComponentRotation()
-			);
+		if(handler->GetGrabbedComponent() != nullptr){
+			handler->SetTargetLocationAndRotation(
+						GetComponentLocation() + GetForwardVector() * HoldDistance,
+						GetComponentRotation()
+						);
+					}
 		}
 }
 
@@ -57,9 +59,9 @@ void UGrabber::Grab()
 		sphere
 	);
 	if(Hit){
-		UE_LOG(LogTemp, Display, TEXT("Hit By %s"), *result.GetActor()->GetActorNameOrLabel());
 		UPhysicsHandleComponent* handler = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
 		if(handler != nullptr){
+			// result.GetComponent()->WakeAllRigidBodies();
 			handler->GrabComponentAtLocationWithRotation(
 				result.GetComponent(),
 				NAME_None,
