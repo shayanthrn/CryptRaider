@@ -59,25 +59,33 @@ void UGrabber::Grab()
 		sphere
 	);
 	if(Hit){
+		
+		UE_LOG(LogTemp, Display, TEXT("hit by: %s"), *result.GetActor()->GetName());
 		UPhysicsHandleComponent* handler = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
 		if(handler != nullptr){
-			// result.GetComponent()->WakeAllRigidBodies();
+			result.GetComponent()->WakeAllRigidBodies();
+			result.GetActor()->DetachFromActor(FDetachmentTransformRules::KeepWorldTransform);
+			result.GetComponent()->SetSimulatePhysics(true);
 			handler->GrabComponentAtLocationWithRotation(
 				result.GetComponent(),
 				NAME_None,
 				result.ImpactPoint,
 				result.GetComponent()->GetComponentRotation()
 			);
+			result.GetActor()->Tags.Add("grabbed");
+			
 		}
 	}
 	
 }
 
 //Release Function
+//TODO remove grab tag
 void UGrabber::Release()
 {
 	UPhysicsHandleComponent* handler = GetOwner()->FindComponentByClass<UPhysicsHandleComponent>();
 		if(handler != nullptr){
+			handler->GetGrabbedComponent()->GetOwner()->Tags.Remove("grabbed");
 			handler->ReleaseComponent();
 		}
 }

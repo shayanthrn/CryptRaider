@@ -40,6 +40,10 @@ void UTriggerComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAct
 	if(Mover != nullptr){
 		if(shouldtrigger==RequiredTags.Num()){ // should trigger!
 			Mover->setMove(true);
+			for(AActor* Actor:OverlapingActors){
+				Actor->AttachToComponent(this,FAttachmentTransformRules::KeepWorldTransform);
+				Cast<UPrimitiveComponent>(Actor->GetRootComponent())->SetSimulatePhysics(false);
+			}
 		}
 		else{
 			Mover->setMove(false);
